@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rat.css">
+    <title>Rating</title>
+</head>
+<body>
+    <div id="id-rating-label" class="label">
+        Rate your satisfaction with the service you received
+      </div>
+      <div id="id-rating"
+           class="rating-slider"
+           role="slider"
+           tabindex="0"
+           aria-valuemin="1"
+           aria-valuenow="0"
+           aria-valuemax="10"
+           aria-valuetext="Choose a rating from 1 to 10 where 10 is extremely satisfied"
+           aria-labelledby="id-rating-label">
+           <svg aria-hidden="true"
+           xmlns="http://www.w3.org/2000/svg"
+           width="800"
+           height="110">
+      
+        <g class="rating" data-value="1">
+          <path class="star" d="M20,40 L25,15 L30,40 L10,25 L35,25 Z"></path>
+          <text class="description" x="13" y="60">Extremely Unsatisfied</text>
+        </g>
+      
+        <g class="rating" data-value="2">
+          <path class="star" d="M60,40 L65,15 L70,40 L50,25 L85,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="3">
+          <path class="star" d="M100,40 L105,15 L110,40 L90,25 L125,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="4">
+          <path class="star" d="M140,40 L145,15 L150,40 L130,25 L165,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="5">
+          <path class="star" d="M180,40 L185,15 L190,40 L170,25 L205,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="6">
+          <path class="star" d="M220,40 L225,15 L230,40 L210,25 L245,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="7">
+          <path class="star" d="M260,40 L265,15 L270,40 L250,25 L285,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="8">
+          <path class="star" d="M300,40 L305,15 L310,40 L290,25 L325,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="9">
+          <path class="star" d="M340,40 L345,15 L350,40 L330,25 L365,25 Z"></path>
+        </g>
+      
+        <g class="rating" data-value="10">
+          <path class="star" d="M380,40 L385,15 L390,40 L370,25 L405,25 Z"></path>
+          <text class="description" x="350" y="60">Extremely Satisfied</text>
+        </g>
+      </svg>
+      </div>
+      <div id="announcement" aria-live="assertive" ></div>
+
+      
+ <script src="rat.js"></script>
+</body>
+</html>
