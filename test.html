@@ -120,7 +120,7 @@
                 const value = star.getAttribute('data-value');
                 setRating(value);
             });
-            
+
             star.addEventListener('mouseenter', () => {
                 highlightStars(star.getAttribute('data-value'));
             });
@@ -131,11 +131,15 @@
         });
 
         ratingSlider.addEventListener('keydown', (e) => {
-            const currentRating = parseInt(ratingSlider.getAttribute('aria-valuenow'));
+            const currentRating = parseInt(ratingSlider.getAttribute('aria-valuenow'), 10);
+            let newRating;
+
             if (e.key === 'ArrowRight' && currentRating < 10) {
-                setRating(currentRating + 1);
+                newRating = currentRating + 1;
+                setRating(newRating);
             } else if (e.key === 'ArrowLeft' && currentRating > 1) {
-                setRating(currentRating - 1);
+                newRating = currentRating - 1;
+                setRating(newRating);
             }
         });
 
@@ -148,22 +152,25 @@
                     star.querySelector('.star').classList.remove('selected');
                 }
             });
-            
+
             ratingSlider.setAttribute('aria-valuenow', value);
             ratingSlider.setAttribute('aria-valuetext', `Rating: ${value}`);
 
             const announcement = document.getElementById('announcement');
-            if (value === "1") {
-                announcement.textContent = "Extremely Unsatisfied";
-            } else if (value === "10") {
-                announcement.textContent = "Extremely Satisfied";
+            
+            // Set the announcement text based on the value
+            if (value === 1) {
+                announcement.textContent = "Rating: 1, Extremely Unsatisfied";
+            } else if (value === 10) {
+                announcement.textContent = "Rating: 10, Extremely Satisfied";
             } else {
                 announcement.textContent = `Rating: ${value}`;
             }
-            
+
+            // Reset the announcement after a delay
             setTimeout(() => {
                 announcement.textContent = '';
-            }, 2000);
+            }, 8000);
         }
 
         function highlightStars(value) {
@@ -181,6 +188,8 @@
                 star.querySelector('.star').classList.remove('hover');
             });
         }
+
+
     </script>
 </body>
 </html>
